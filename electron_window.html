@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Electron Development Environment</title>
+    <script type="text/javascript">
+      var cwd = process.cwd();
+      document.write(`<base href="${cwd}/" />`);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+
+    function appendTag(parentNode, nodeType, config) {
+      var newNode  = document.createElement(nodeType);
+      Object.keys(config).forEach(function(key) {
+        newNode[key] = config[key];
+      });
+      parentNode.appendChild(newNode);
+    }
+
+    window.onload = function(){
+      require('babel/register')();
+      var cwd = process.cwd();
+      var headNode    = document.getElementsByTagName('head')[0];
+      appendTag(headNode, 'script', {type: 'text/javascript', url: __dirname +  '/context_menu.js'});
+      require(process.cwd() + "/script.es6.js");
+    };
+    </script>
+
+  </body>
+</html>
