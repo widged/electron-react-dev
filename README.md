@@ -2,7 +2,7 @@ This is the setup I use to rapidly develop Dumb React components on OSX. I use e
 
 You must install electron-prebuilt globally
 
-   npm install -g electron-prebuilt
+    npm install -g electron-prebuilt
 
 See the `usage` folder for an example of use for the coding of a react component. The `usage` folder can be moved anywhere on your computer, provided that electron.command gets updated.
 
